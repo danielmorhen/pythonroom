@@ -13,9 +13,13 @@
 
     <script>
         async function runPython() {
+            console.log("Loading Pyodide...");
             const pyodide = await loadPyodide();
+            console.log("Pyodide loaded.");
+
             let outputElement = document.getElementById("output");
-            
+            outputElement.textContent = "Starting Python game...";
+
             pyodide.runPython(`
                 import random
 
